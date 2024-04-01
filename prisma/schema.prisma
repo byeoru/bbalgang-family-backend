@@ -27,9 +27,9 @@ enum IngredientScale {
 
 model User {
   id Int @id @default(autoincrement())
-  kakao_id String? 
-  google_id String? 
-  apple_id String? 
+  kakao_id String? @unique
+  google_id String? @unique
+  apple_id String? @unique
   name String
   Role WorkerRole
   start_date DateTime
