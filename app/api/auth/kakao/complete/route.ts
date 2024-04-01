@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
   const accessTokenParams = new URLSearchParams({
     grant_type: "authorization_code",
     client_id: process.env.KAKAO_CLIENT_ID!,
-    redirect_uri: `http://${request.nextUrl.host}/api/auth/kakao/complete`,
+    redirect_uri: `https://${request.nextUrl.host}/api/auth/kakao/complete`,
     code,
     client_secret: process.env.KAKAO_CLIENT_SECRET!,
   }).toString();
