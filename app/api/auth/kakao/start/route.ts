@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -11,7 +10,5 @@ export async function GET(request: NextRequest) {
   };
   const formattedParams = new URLSearchParams(params).toString();
   const finalUrl = `${baseUrl}?${formattedParams}`;
-  console.log(`finalUrl: ${finalUrl}`);
-  console.log(`params: ${formattedParams}`);
-  return redirect(finalUrl);
+  fetch(finalUrl);
 }
